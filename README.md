@@ -7,7 +7,7 @@ AgriculturalModelExchangeInitiative
 Model of Soil Temperature of the crop growth simulation model in Simplace Platform
 
 Project Organization
-------------
+--------------------
 
 ```
 
@@ -43,7 +43,7 @@ Project Organization
 
 Model visualization
 -------------------
-![](doc/images/energy_balance2.png)
+![](doc/images/SoilTemperature.png)
 
 An example of transformation in OpenAlea
 ----------------------------------------
