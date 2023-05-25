@@ -4,7 +4,7 @@
 AgriculturalModelExchangeInitiative
 ==============================
 
-Model of Energy Balance of the crop growth simulation model SiriusQuality
+Model of Soil Temperature of the crop growth simulation model in Simplace Platform
 
 Project Organization
 ------------
