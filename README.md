@@ -1,8 +1,6 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4292231.svg)](https://doi.org/10.5281/zenodo.4292231)
-
 
 AgriculturalModelExchangeInitiative
-==============================
+==================================
 
 Model of Soil Temperature of the crop growth simulation model in Simplace Platform
 
