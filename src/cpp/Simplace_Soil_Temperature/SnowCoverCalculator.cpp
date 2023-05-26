@@ -30,7 +30,7 @@ void SnowCoverCalculator::Init(SoilTemperatureState& s, SoilTemperatureState& s1
     double TMEAN;
     double TAMPL;
     double DST;
-    Albedo = 0.0226 * log10(cCarbonContent, 10) + 0.1502;
+    Albedo = 0.0226 * log10(cCarbonContent) + 0.1502;
     TMEAN = 0.5 * (iTempMax + iTempMin);
     TAMPL = 0.5 * (iTempMax - iTempMin);
     DST = TMEAN + (TAMPL * (iRadiation * (1 - Albedo) - 14) / 20);

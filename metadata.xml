@@ -16,7 +16,7 @@
         <TypeOfModel type="Modular"/>
         <IsPartOfLargerModel YesOrNo="Yes" name = "Lintul Model" />
         <ValidatedWithCropMStudio YesOrNo="Yes" />
-        <SourceRepository src="https://github.com/Crop2ML-Catalog/SQ_Energy_Balance" />
+        <SourceRepository src="https://github.com/Crop2ML-Catalog/Simplace_Soil_Temperature" />
     </Features>
     <Doc>
         <file></file>
@@ -35,7 +35,6 @@
             <openalea />
             <bioma />
             <simplace/>
-            <record />
             <dssat />
             <stics />
             <sirius />            

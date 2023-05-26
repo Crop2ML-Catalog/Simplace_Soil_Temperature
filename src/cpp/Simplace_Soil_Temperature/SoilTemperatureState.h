@@ -15,6 +15,7 @@ class SoilTemperatureState
         int AgeOfSnow ;
         vector<double> rSoilTempArrayRate ;
         vector<double> pSoilLayerDepth ;
+        vector<double> SoilTempArray ;
     public:
         SoilTemperatureState();
         double getAlbedo();
@@ -29,6 +30,8 @@ class SoilTemperatureState
         void setrSoilTempArrayRate(const vector<double> &  _rSoilTempArrayRate);
         vector<double> & getpSoilLayerDepth();
         void setpSoilLayerDepth(const vector<double> &  _pSoilLayerDepth);
+        vector<double> & getSoilTempArray();
+        void setSoilTempArray(const vector<double> &  _SoilTempArray);
 
 };
 #endif

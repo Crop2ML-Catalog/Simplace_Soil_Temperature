@@ -13,7 +13,7 @@ class SoilTemperatureComponent
         double cDampingDepth ;
     public:
         SoilTemperatureComponent();
-        SoilTemperatureComponent(const SoilTemperatureComponent& copy);
+        SoilTemperatureComponent(SoilTemperatureComponent& copy);
         void  Calculate_Model(SoilTemperatureState& s, SoilTemperatureState& s1, SoilTemperatureRate& r, SoilTemperatureAuxiliary& a, SoilTemperatureExogenous& ex);
         void  Init(SoilTemperatureState& s,SoilTemperatureState& s1, SoilTemperatureRate& r, SoilTemperatureAuxiliary& a, SoilTemperatureExogenous& ex);
         double getcCarbonContent();

@@ -27,11 +27,11 @@ void SoilTemperatureComponent::setcFirstDayMeanTemp(double _cFirstDayMeanTemp)
 }
 void SoilTemperatureComponent::setcAverageGroundTemperature(double _cAverageGroundTemperature)
 {
-    _STMPsimCalculator.setcAverageGroundTemperature(_cAverageGroundTemperature);
+    _STMPsimCalculator.setcAVT(_cAverageGroundTemperature);
 }
 void SoilTemperatureComponent::setcAverageBulkDensity(double _cAverageBulkDensity)
 {
-    _STMPsimCalculator.setcAverageBulkDensity(_cAverageBulkDensity);
+    _STMPsimCalculator.setcABD(_cAverageBulkDensity);
 }
 void SoilTemperatureComponent::setcDampingDepth(double _cDampingDepth)
 {
@@ -39,27 +39,25 @@ void SoilTemperatureComponent::setcDampingDepth(double _cDampingDepth)
 }
 void SoilTemperatureComponent::Calculate_Model(SoilTemperatureState& s, SoilTemperatureState& s1, SoilTemperatureRate& r, SoilTemperatureAuxiliary& a, SoilTemperatureExogenous& ex)
 {
-    iTempMax = ex.iAirTemperatureMax;
-    iTempMin = ex.iAirTemperatureMin;
-    iRadiation = ex.iGlobalSolarRadiation;
-    iSoilTempArray = ex.SoilTempArray;
-    cAVT = cAverageGroundTemperature;
-    cABD = cAverageBulkDensity;
+    ex.setiTempMax(ex.getiAirTemperatureMax());
+    ex.setiTempMin(ex.getiAirTemperatureMin());
+    ex.setiRadiation(ex.getiGlobalSolarRadiation());
+    ex.setiSoilTempArray(s.getSoilTempArray());
     _SnowCoverCalculator.Calculate_Model(s, s1, r, a, ex);
-    ex.iSoilSurfaceTemperature = s.SoilSurfaceTemperature;
+    ex.setiSoilSurfaceTemperature(s.getSoilSurfaceTemperature());
     _STMPsimCalculator.Calculate_Model(s, s1, r, a, ex);
 }
-SoilTemperatureComponent::SoilTemperatureComponent(const SoilTemperatureComponent& toCopy)
+SoilTemperatureComponent::SoilTemperatureComponent(SoilTemperatureComponent& toCopy)
 {
-    cCarbonContent = toCopy.cCarbonContent;
+    cCarbonContent = toCopy.getcCarbonContent();
     
-        for (int i = 0; i < ; i++)
+        for (int i = 0; i < toCopy.getcSoilLayerDepth().size(); i++)
         {
-            cSoilLayerDepth[i] = toCopy.cSoilLayerDepth[i];
+            cSoilLayerDepth[i] = toCopy.getcSoilLayerDepth()[i];
         }
     
-    cFirstDayMeanTemp = toCopy.cFirstDayMeanTemp;
-    cAverageGroundTemperature = toCopy.cAverageGroundTemperature;
-    cAverageBulkDensity = toCopy.cAverageBulkDensity;
-    cDampingDepth = toCopy.cDampingDepth;
+    cFirstDayMeanTemp = toCopy.getcFirstDayMeanTemp();
+    cAverageGroundTemperature = toCopy.getcAverageGroundTemperature();
+    cAverageBulkDensity = toCopy.getcAverageBulkDensity();
+    cDampingDepth = toCopy.getcDampingDepth();
 }

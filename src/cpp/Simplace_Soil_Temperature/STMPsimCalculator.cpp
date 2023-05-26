@@ -19,9 +19,6 @@ void STMPsimCalculator::Init(SoilTemperatureState& s, SoilTemperatureState& s1, 
     vector<double> SoilTempArray;
     vector<double> rSoilTempArrayRate;
     vector<double> pSoilLayerDepth;
-    SoilTempArray = ;
-    rSoilTempArrayRate = ;
-    pSoilLayerDepth = ;
     double tProfileDepth;
     double additionalDepth;
     double firstAdditionalLayerHight;
@@ -35,11 +32,11 @@ void STMPsimCalculator::Init(SoilTemperatureState& s, SoilTemperatureState& s1, 
     additionalDepth = cDampingDepth - tProfileDepth;
     firstAdditionalLayerHight = additionalDepth - float(floor(additionalDepth));
     layers = int(abs(float((int) ceil(additionalDepth)))) + cSoilLayerDepth.size();
-    tStmp = vector<double> {layers};
+    tStmp = vector<double> (layers);
     ;
-    tStmpRate = vector<double> {layers};
+    tStmpRate = vector<double> (layers);
     ;
-    tz = vector<double> {layers};
+    tz = vector<double> (layers);
     ;
     for (i=0 ; i!=tStmp.size() ; i+=1)
     {
