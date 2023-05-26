@@ -53,7 +53,7 @@ An example of transformation in OpenAlea
 
 
 
-An example of unit test in R (Penman model unit)
+An example of unit test in R (Snow cover model unit)
 ------------------------------------------------
 
 ![](doc/images/snow_notebook.png)
